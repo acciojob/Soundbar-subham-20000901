@@ -7,11 +7,13 @@ buttons.forEach((button) => {
 		if(currentAudio){
 			currentAudio.pause();
 			currentAudio.currentTime = 0;	
+			  currentAudio.remove();
 		}
 
 		let currentSound = button.innerText;
-		currentAudio = new Audio(`sounds/${currentSound}.mp3`);
-		currentAudio.play();
+		  currentAudio.src = `sounds/${currentSound}.mp3`;
+          currentAudio.autoplay = true;
+         document.body.appendChild(currentAudio);
 	});
 });
 
@@ -19,6 +21,7 @@ stop.addEventListener('click',function(){
 	if(currentAudio){
 			currentAudio.pause();
 			currentAudio.currentTime = 0;	
+		     currentAudio.remove();
 		}
 	
 });
