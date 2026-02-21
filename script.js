@@ -10,10 +10,12 @@ buttons.forEach((button) => {
 			  currentAudio.remove();
 		}
 
-		let currentSound = button.innerText;
-		  currentAudio.src = `sounds/${currentSound}.mp3`;
-          currentAudio.autoplay = true;
-         document.body.appendChild(currentAudio);
+	  let soundName = button.innerText.trim();
+    currentAudio = document.createElement("audio");
+    currentAudio.src = `sounds/${soundName}.mp3`;
+    currentAudio.autoplay = true;
+
+    document.body.appendChild(currentAudio);
 	});
 });
 
